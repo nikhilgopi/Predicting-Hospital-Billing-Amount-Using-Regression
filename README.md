@@ -14,7 +14,7 @@ In modern healthcare systems, hospital expenses vary significantly based on fact
 
 📊 Dataset Description
 
-* Source: Hospital inpatient discharge dataset
+* Source: Hospital inpatient discharge dataset (https://www.kaggle.com/code/owentamunogilbert/new-york-hospital-charges-analysis/input)
 * Records: ~650,000+ (sampled where required)
 * Features: Patient demographics, clinical severity indicators, admission type, hospital details, and billing-related variables
 * Target Variable:
