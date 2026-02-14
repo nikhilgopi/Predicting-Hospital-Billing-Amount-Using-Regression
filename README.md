@@ -58,8 +58,20 @@ Five regression models were built and evaluated:
 
 📈 Key Results
 
+Model Performance Summary
+
+| Model                     | R² Score |
+|---------------------------|----------|
+| Linear Regression         | 0.69     |
+| Random Forest Regressor   | 0.89     |
+| Gradient Boost Regressor  | 0.83     |
+| AdaBoost Regressor        | 0.62     |
+| MLP Regressor             | 0.84     |
+| Tuned Random Forest       | 0.91     |
+
+
 * Top Performer: The Tuned Random Forest Regressor outperforms linear and boosting models.
-* Accuracy: The final model explains over 90% of the variance (R^2 > 0.90) in hospital charges.
+* Accuracy: The final model explains over 90% of the variance (R^2 > 0.90) in hospital charges after the Hyperparameter test.
 
 ⚠️ Limitations
 
