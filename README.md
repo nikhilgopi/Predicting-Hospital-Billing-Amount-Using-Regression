@@ -14,22 +14,47 @@ In modern healthcare systems, hospital expenses vary significantly based on fact
 
 📊 Dataset Description
 
-* Source: SPARCS (Statewide Planning and Research Cooperative System) via Kaggle.Size: Original dataset contains 2.19 million rows; analysis performed on a representative sample.
-* Key Features:Patient Demographics: Age Group, Gender, Race, Ethnicity.Clinical Data: CCSR Diagnosis/Procedure Codes, APR DRG Description, Severity of Illness, Risk of Mortality.
-* Administrative Data: Facility Name, Type of Admission, Length of Stay, Payment Typology.
-* Targets: Total Charges, Total Costs.
+* Source: Hospital inpatient discharge dataset
+* Records: ~650,000+ (sampled where required)
+* Features: Patient demographics, clinical severity indicators, admission type, hospital details, and billing-related variables
+* Target Variable:
+* log_total_charges (log-transformed hospital billing amount)
+Log transformation was applied to reduce skewness and improve model performance.
 
 🛠️ Tech Stack
 
 * Language: Python
 * Libraries: Pandas, NumPy (Data Handling); Matplotlib, Seaborn (Visualization); Scikit-Learn (Machine Learning Pipeline).
 
-🚀 Methodology
+🧹 Data Preprocessing
 
-* Exploratory Data Analysis (EDA): Identified missing values ​​(eg, Birth Weight and Payment Typology 3 had >89% missing data) and removed duplicate entries.
-* Preprocessing: Sampling of data for computational efficiency.Handling categorical variables via encoding.Standardization of numerical features.
-* Modeling: Implemented a pipeline comparing Linear Regression and ensemble methods.
-* Optimization: Tuned the Random Forest model to achieve peak performance.
+* Removed duplicate records.
+* Handled missing values using appropriate strategies.
+* Dropped leakage features (Total Charges, Total Costs).
+* Applied log transformation to the target variable.
+* Encoded categorical variables using One-Hot Encoding.
+* Scaled numerical features using StandardScaler.
+* Selected top 30 important features using Random Forest feature importance.
+
+🔍 Exploratory Data Analysis (EDA)
+
+Key insights:
+
+* Hospital charges were highly right-skewed before log transformation.
+* Length of Stay strongly correlates with hospital billing.
+* Higher clinical severity leads to significantly higher costs.
+* Emergency and trauma admissions show higher billing patterns.
+* Demographic features have comparatively lower impact on costs.
+
+🧠 Models Implemented
+
+Five regression models were built and evaluated:
+
+* Linear Regression
+* Random Forest Regressor
+* Gradient Boosting Regressor
+* AdaBoost Regressor
+* MLP Regressor
 
 📈 Key Results
 
